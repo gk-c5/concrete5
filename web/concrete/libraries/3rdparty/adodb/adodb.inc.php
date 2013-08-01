@@ -1652,8 +1652,9 @@
 	
 	function Replace($table, $fieldArray, $keyCol, $autoQuote=false, $has_autoinc=false)
 	{
-		global $ADODB_INCLUDED_LIB;
-		if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+		//global $ADODB_INCLUDED_LIB;
+		//if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+		include_once(ADODB_DIR.'/adodb-lib.inc.php');
 		
 		return _adodb_replace($this, $table, $fieldArray, $keyCol, $autoQuote, $has_autoinc);
 	}
@@ -1937,13 +1938,14 @@
   	 */
 	function GetInsertSQL(&$rs, $arrFields,$magicq=false,$force=null)
 	{	
-		global $ADODB_INCLUDED_LIB;
-		if (!isset($force)) {
-			global $ADODB_FORCE_TYPE;
-			$force = $ADODB_FORCE_TYPE;
+		//global $ADODB_INCLUDED_LIB;
+		//if (!isset($force)) {
+			//global $ADODB_FORCE_TYPE;
+			//$force = $ADODB_FORCE_TYPE;
 			
-		}
-		if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+		//}
+		//if (empty($ADODB_INCLUDED_LIB)) include(ADODB_DIR.'/adodb-lib.inc.php');
+		include_once(ADODB_DIR.'/adodb-lib.inc.php');
 		return _adodb_getinsertsql($this,$rs,$arrFields,$magicq,$force);
 	}
 	
